@@ -1,5 +1,4 @@
 import './App.css'
-import Card from './components/Card/Card.components'
 import { Expenses } from './components/Expenses/Expenses.component'
 
 function App() {
