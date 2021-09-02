@@ -1,7 +1,6 @@
 import { ExpenseDate } from '../ExpenseDate/ExpenseDate.component'
 import './ExpenseItem.styles.css'
 function ExpenseItem(props) {
-  console.log(props.date)
   return (
     <div className='expense-item'>
       <ExpenseDate date={props.date} />
