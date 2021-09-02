@@ -1,4 +1,4 @@
-import Card from '../Card/Card.components'
+import Card from '../../UI/Card/Card.components'
 import ExpenseItem from '../ExpenseItem/ExpenseItem.component'
 import './Expenses.styles.css'
 export const Expenses = ({ expenses }) => (

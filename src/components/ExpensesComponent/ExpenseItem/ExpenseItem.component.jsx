@@ -1,4 +1,4 @@
-import Card from '../Card/Card.components'
+import Card from '../../UI/Card/Card.components'
 import { ExpenseDate } from '../ExpenseDate/ExpenseDate.component'
 import './ExpenseItem.styles.css'
 
