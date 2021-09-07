@@ -1,0 +1,49 @@
+IMPLEMENTING USESTATE
+Calling useState() multiple times isnot a bad practise but calling it once and calling an object in it helps you have a cleaner code
+
+// Setting Individual State
+  const [userInput, setUserInput] = useState({
+    enteredTitle: '',
+    enteredAmount: '',
+    date: '',
+  })
+ 
+  const titleChangeHandler = event => { 
+    setUserInput({
+      ...userInput,  => This ensures other values dont get lost because setState doesn't append existing values
+      enteredTitle: event.target.value,
+    })
+  }
+
+
+THe Logic above for updating userInput will definitely work but there are some issues that might occur especially when you depend on a previous state to update the current state. 
+The best way to effect this is to use a cb within the setUserInput param.
+i.e.
+ const titleChangeHandler = event => { 
+    setUserInput(prevState=>{
+        return {...prevState, enteredTitle:event.target.value}
+    })
+  }
+
+
+  ==========================================
+
+// Setting Multiple State
+const [enteredTitle, setEnteredTitle] = useState('')
+const [enteredAmount, setEnteredAmount] = useState('')
+const [date, setDate] = useState('')
+
+    const titleChangeHandler = event => {
+     setEnteredTitle(event.target.value)
+    
+  }
+
+  const amountChangeHandler = event => {
+     setEnteredAmount(event.target.value)
+    
+  }
+
+  const dateChangeHandler = event => {
+    setDate(event.target.value)
+     
+  }

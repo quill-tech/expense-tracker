@@ -1,0 +1,22 @@
+
+  // const [enteredTitle, setEnteredTitle] = useState('')
+  // const [enteredAmount, setEnteredAmount] = useState('')
+  // const [date, setDate] = useState('')
+ 
+  /*
+   * Listen to events on input change! *
+   */
+  const titleChangeHandler = event => {
+    // setEnteredTitle(event.target.value)
+     
+  }
+
+  const amountChangeHandler = event => {
+    // setEnteredAmount(event.target.value)
+    
+  }
+
+  const dateChangeHandler = event => {
+    // setDate(event.target.value)
+     
+  }

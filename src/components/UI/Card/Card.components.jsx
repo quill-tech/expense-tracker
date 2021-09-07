@@ -8,7 +8,6 @@ import './Card.styles.css'
 function Card(props) {
   // Add className on Card component (children) to the div of classname=>card here.
   const classes = `card + ${props.className}`
-  console.log(props)
   return <div className={classes}>{props.children}</div>
 }
 export default Card
