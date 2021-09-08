@@ -8,6 +8,23 @@ export const Expenses = ({ items }) => {
   const filterSelectedYearHandler = selectedYear => {
     setFilteredYear(selectedYear)
   }
+  /*
+   * To Filter Items by selected date
+   * Get year from Date object and convert it to string then compare to FilteredYear
+   */
+  const filterExpenseByDate = items.filter(
+    ({ date }) => date.getFullYear().toString() === filteredYear
+  )
+  // Output Conditional Contnet
+  let expensesContent = <p>No expense found.</p>
+  if (filterExpenseByDate.length !== 0) {
+    /* Map through filterExpenseByDate instead of the inital items */
+    expensesContent = filterExpenseByDate.map(
+      ({ title, amount, date, ...item }) => (
+        <ExpenseItem key={item.id} title={title} amount={amount} date={date} />
+      )
+    )
+  }
   return (
     <div>
       <Card className='expenses'>
@@ -15,14 +32,7 @@ export const Expenses = ({ items }) => {
           defaultYear={filteredYear}
           onFilterYear={filterSelectedYearHandler}
         />
-        {items.map(({ title, amount, date, ...item }) => (
-          <ExpenseItem
-            key={item.id}
-            title={title}
-            amount={amount}
-            date={date}
-          />
-        ))}
+        {expensesContent}
       </Card>
     </div>
   )
