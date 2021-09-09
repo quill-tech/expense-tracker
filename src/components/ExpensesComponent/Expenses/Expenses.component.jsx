@@ -3,6 +3,7 @@ import Card from '../../UI/Card/Card.components'
 import ExpenseFilter from '../ExpenseFilter/ExpenseFilter.components'
 import ExpensesList from './ExpensesList/ExpensesList.component'
 import './Expenses.styles.css'
+import ExpensesChart from '../ExpensesChart/ExpensesChart.component'
 export const Expenses = ({ items }) => {
   const [filteredYear, setFilteredYear] = useState('2021')
   const filterSelectedYearHandler = selectedYear => {
@@ -23,6 +24,7 @@ export const Expenses = ({ items }) => {
           defaultYear={filteredYear}
           onFilterYear={filterSelectedYearHandler}
         />
+        <ExpensesChart expenses={filterExpenseByDate} />
         <ExpensesList items={filterExpenseByDate} />
       </Card>
     </div>

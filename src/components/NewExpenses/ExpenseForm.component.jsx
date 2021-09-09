@@ -33,7 +33,7 @@ const ExpenseForm = props => {
     event.preventDefault()
     const expenseData = {
       title: userInput.enteredTitle,
-      amount: userInput.enteredAmount,
+      amount: +userInput.enteredAmount,
       date: new Date(userInput.date),
     }
     // Execute props data to be initialized in NewExpense Component
